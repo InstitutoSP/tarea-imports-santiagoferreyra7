@@ -25,19 +25,29 @@ def multiplicacion(a, b):
     resultado = a * b
     return resultado
 
-# Función para ordenar una lista de menor a mayor usando el algoritmo de burbuja
-def bubble_sort_asc(lista):
+def burbuja(lista):
     for _ in range(len(lista)):
         for j in range(len(lista) - 1):
             if lista[j] > lista[j+1]:
                 lista[j], lista[j+1] = lista[j+1], lista[j]
 
-# Función para ordenar una lista de mayor a menor usando el algoritmo de burbuja
-def bubble_sort_desc(lista):
+def burbuja(lista):
     for _ in range(len(lista)):
         for j in range(len(lista) - 1):
             if lista[j] < lista[j+1]:
                 lista[j], lista[j+1] = lista[j+1], lista[j]
+
+def suma(a, b):
+    return a + b
+
+def resta(a, b):
+    return a - b
+
+def multiplicacion(a, b):
+    return a * b
+
+def division(a, b):
+    return a / b
 
 def crear_carpeta():
     while True:
@@ -47,7 +57,7 @@ def crear_carpeta():
         if opcion == "salir":
             print("¡Adiós!")
             break
-        elif opcion == "suma" or opcion == "resta" or opcion == "multiplicacion" or opcion == "division":
+        elif opcion in ["suma", "resta", "multiplicacion", "division"]:
             num1 = int(input("Selecciona un número: "))
             num2 = int(input("Selecciona otro número: "))
 
@@ -64,11 +74,11 @@ def crear_carpeta():
                     print("El resultado de la división es:", division(num1, num2))
         elif opcion == "ordenar_asc":
             list3 = ["Bruno", "Joaquin", "Martin", "Gonzalo", "Franco", "Matias", "Quimy", "Marti"]
-            bubble_sort_asc(list3)
+            burbuja(list3)
             print("Lista ordenada alfabéticamente (sin modificar la lista original):", list3)
         elif opcion == "ordenar_desc":
             list3 = ["Bruno", "Joaquin", "Martin", "Gonzalo", "Franco", "Matias", "Quimy", "Marti"]
-            bubble_sort_desc(list3)
+            burbuja(list3)
             print("Lista ordenada alfabéticamente en orden descendente (sin modificar la lista original):", list3)
         else:
             print("Opción no válida. Por favor, selecciona una opción válida.")
